@@ -11,10 +11,18 @@ function Register(props) {
     const onChangeHandle = (e) => {
         setAccount({ ...account, [e.target.name]: e.target.value })
     }
-    const onSubmit = () => {
+    const [validated, setValidated] = useState(false);
+    const onSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        setValidated(true);
         account.avt = account.avt.slice(12)
         axios
-            .post('http://localhost:5000/api/user', {account})
+            .post('http://localhost:5000/api/user', { account })
             .then((res) => {
                 toast.success('Đăng ký tài khoản thành công. Bây giờ bạn có thể đăng nhập.', {
                     position: "top-center",
@@ -52,7 +60,7 @@ function Register(props) {
                 <Card.Body>
                     <Row>
                         <Col md='6' lg='12' className='d-flex flex-column align-items-center text-start'>
-                            <Form>
+                            <Form noValidate validated={validated} onSubmit={onSubmit}>
                                 <Form.Group>
                                     <Form.Group>
                                         <Form.Label htmlFor="hoten" className="control-label">
@@ -64,7 +72,7 @@ function Register(props) {
                                             name="name"
                                             placeholder="Tên của bạn "
                                             onChange={onChangeHandle}
-                                            required
+
                                         ></Form.Control>
                                     </Form.Group>
                                     <Form.Label
@@ -138,7 +146,7 @@ function Register(props) {
                                         <Link to={'/login'} className={'text-white fw-bolder h5'}> <Icon icon={faRightFromBracket} /> Đăng nhập tài khoản hiện có </Link>
                                     </Form.Label>
                                 </Form.Group>
-                                <Button variant='primary' onClick={() => onSubmit()}>Đăng Ký</Button>
+                                <Button variant='primary' type='submit' onClick={() => onSubmit()}>Đăng Ký</Button>
                             </Form>
                         </Col>
                     </Row>

@@ -109,11 +109,13 @@ function Details(props) {
     return (
         <Container fluid className='padding-header'>
             <ToastContainer />
+
             {Product.image && (
-                <Row >
+                <Row Row >
                     <Col xs={12} sm={7} >
                         <div className='container'>
                             <img src={`/image/SanPham/${Product.image}`} className='w-100' alt='...' />
+                        
                             <div className='mt-0 text-start ms-4'>
                                 <p className=' fw-bold mb-0 text-primary'>Sản phẩm tặng kèm kèm:</p>
                                 <span>
@@ -215,7 +217,8 @@ function Details(props) {
                         </div>
                     </Col>
                 </Row>
-            )}
+            )
+            }
             <Container className='mt-2'>
                 <Row >
                     <h4 className='text-start text-uppercase text-danger'> Sản phẩm cùng thương hiệu</h4>
@@ -240,7 +243,7 @@ function Details(props) {
                         })}
                 </Row>
             </Container>
-        </Container>
+        </Container >
     );
 }
 

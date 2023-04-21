@@ -74,9 +74,27 @@ exports.create = async (req, res, next) => {
             var mailOptions = {
                 from: 'youremail@student.ctu.edu.vn',
                 to: oder.customer.email,
-                subject: 'TN-CARS Xin Chào',
-                html: `Bạn vừa đặt hàng với tổng giá trị là: ${bill.total} VNĐ. Vui lòng kiểm tra email thương xuyên để biết trạng thái đơn hàng của bạn.
-                <p> TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe thịnh vương.</p>`
+                subject: 'TN-CARS VIỆT NAM',
+                html:
+                    `   
+                        <style>
+                        h3 {
+                            color: blue,
+                        }
+                        h4 {
+                            font-weight: bold,
+                        }
+                        p {
+                            font-size: 18px,
+                        }
+                        </style>
+                        <div>
+                            <h3>Xin chào ${oder.customer.name}</h3>
+                            <p>Bạn vừa đặt hàng với tổng giá trị là: ${bill.total} VNĐ. </p>
+                            <p>Vui lòng kiểm tra email thương xuyên để biết trạng thái đơn hàng của bạn.</p>
+                            <h4>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe.</h4>
+                        </div>
+                    `
             };
 
             transporter.sendMail(mailOptions, function (error, info) {
@@ -121,6 +139,7 @@ exports.update = async (req, res, next) => {
                 var product = await Products.findById({ _id: e.id_product._id })
                 if (product.soluong < e.quantity || product.soluong == 0) {
                     var message = 'Tạm hết hàng'
+                    return next();
                 }
                 else {
                     await Products.findOneAndUpdate({
@@ -142,9 +161,27 @@ exports.update = async (req, res, next) => {
             var mailOptions = {
                 from: 'youremail@student.ctu.edu.vn',
                 to: currentBill.customer.email,
-                subject: 'TN-CARS Xin Chào',
-                html: `Bạn vừa đặt hàng với tổng giá trị là: ${bill.total} VNĐ. Vui lòng kiểm tra email thương xuyên để biết trạng thái đơn hàng của bạn.
-                <p> TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe thịnh vương.</p>`
+                subject: 'TN-CARS VIỆT NAM',
+                html:
+                    `   
+                        <style>
+                        h3 {
+                            color: blue,
+                        }
+                        h4 {
+                            font-weight: bold,
+                        }
+                        p {
+                            font-size: 18px,
+                        }
+                        </style>
+                        <div>
+                            <h3>Xin chào ${currentBill.customer.name}</h3>
+                            <p>Bạn vừa đặt hàng với tổng giá trị là: ${bill.total} VNĐ. </p>
+                            <p>Vui lòng kiểm tra email thương xuyên để biết trạng thái đơn hàng của bạn.</p>
+                            <h4>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe.</h4>
+                        </div>
+                    `
             };
 
             transporter.sendMail(mailOptions, function (error, info) {
@@ -177,7 +214,7 @@ exports.update = async (req, res, next) => {
                 console.log(billreturn);
                 billreturn.products.forEach(async value => {
                     const product = await Products.findById({ _id: value.id_product })
-                    product.soluong = product.soluong + value.quantity 
+                    product.soluong = product.soluong + value.quantity
                     await product.save();
                 })
 
@@ -195,10 +232,27 @@ exports.update = async (req, res, next) => {
             var mailOptions = {
                 from: 'youremail@student.ctu.edu.vn',
                 to: bill.customer.email,
-                subject: 'TN-CARS Xin Chào',
+                subject: 'TN-CARS VIỆT NAM',
                 html:
-                    `<p>Trạng thái đơn hàng của bạn: ${bill.status}</p>
-                    <p> TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe thịnh vương.</p>`,
+                    `   
+                        <style>
+                        h3 {
+                            color: blue,
+                        }
+                        h4 {
+                            font-weight: bold,
+                        }
+                        p {
+                            font-size: 18px,
+                        }
+                        </style>
+                        <div>
+                            <h3>Xin chào ${bill.customer.name}</h3>
+                            <p>Đơn hàng với tổng giá trị là: ${bill.total} VNĐ.  </p>
+                            <p>Thông tin đơn hàng của bạn: ${bill.status}</p>
+                            <h4>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe.</h4>
+                        </div>
+                    `
             };
 
             transporter.sendMail(mailOptions, function (error, info) {

@@ -18,8 +18,26 @@ exports.create = async (req, res, next) => {
             var mailOptions = {
                 from: 'youremail@student.ctu.edu.vn',
                 to: feedback.email,
-                subject: 'TN-CARS Xin Chào',
-                html: `<p> Chúng tôi đã tiếp nhận được thông tin. Bạn vui lòng kiểm tra email thường xuyên chúng sẻ phản hồi sớm nhất đến bạn</p> <h3>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe thịnh vương</h3>`,
+                subject: 'TN-CARS VIỆT NAM',
+                html:
+                    `   
+                        <style>
+                        h3 {
+                            color: blue,
+                        }
+                        h4 {
+                            font-weight: bold,
+                        }
+                        p {
+                            font-size: 18px,
+                        }
+                        </style>
+                        <div>
+                            <h3>Xin chào ${feedback.email}</h3>
+                            <p>Chúng tôi đã tiếp nhận được yêu cầu thông tin từ bạn. Vui lòng chờ đợi và kiểm tra email trường xuyên. Chúng tôi sẻ liên hệ lại với bạn trong thời gian sớm nhất.</p>
+                            <h4>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe.</h4>
+                        </div>
+                    `
             };
 
             transporter.sendMail(mailOptions, function (error, info) {
@@ -53,8 +71,26 @@ exports.create = async (req, res, next) => {
             var mailOptions = {
                 from: 'youremail@student.ctu.edu.vn',
                 to: feedback.email,
-                subject: 'TN-CARS Xin Chào',
-                html: `<p> Chúng tôi đã tiếp nhận được thông tin. Bạn vui lòng kiểm tra email thường xuyên chúng sẻ phản hồi sớm nhất đến bạn</p> <h3>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe thịnh vương</h3>`,
+                subject: 'TN-CARS VIỆT NAM',
+                html:
+                    `   
+                        <style>
+                        h3 {
+                            color: blue,
+                        }
+                        h4 {
+                            font-weight: bold,
+                        }
+                        p {
+                            font-size: 18px,
+                        }
+                        </style>
+                        <div>
+                            <h3>Xin chào ${feedback.email}</h3>
+                            <p>Chúng tôi đã tiếp nhận được yêu cầu thông tin từ bạn. Vui lòng chờ đợi và kiểm tra email trường xuyên. Chúng tôi sẻ liên hệ lại với bạn trong thời gian sớm nhất.</p>
+                            <h4>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe.</h4>
+                        </div>
+                    `
             };
 
             transporter.sendMail(mailOptions, function (error, info) {
@@ -108,8 +144,28 @@ exports.update = async (req, res, next) => {
         var mailOptions = {
             from: 'youremail@student.ctu.edu.vn',
             to: feedback.email,
-            subject: 'TN-CARS Xin Chào',
-            html: ` <p> Dưới đây là thông tin mà chúng tôi xin được phản hồi đến bạn.</p> <img  src=${image} /> <p> ${req.body.content}  </p> <h3>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe thịnh vương</h3>`,
+            subject: 'TN-CARS VIỆT NAM',
+            html:
+                `   
+                        <style>
+                        h3 {
+                            color: blue,
+                        }
+                        h4 {
+                            font-weight: bold,
+                        }
+                        p {
+                            font-size: 18px,
+                        }
+                        </style>
+                        <div>
+                            <h3>Xin chào ${feedback.email}</h3>
+                            <p>Dưới đây là thông tin phản hồi từ chúng tôi đến bạn</p>
+                            <p>${req.body.content}<p>
+                            <p> <img src=${image} </p>
+                            <h4>TN-CARS xin chân thành cảm ơn quý khách. Xin chúc quý khách hàng ngày càng thành công trong công việc, gặp nhiều may mắn và sức khỏe.</h4>
+                        </div>
+                    `
         };
 
         transporter.sendMail(mailOptions, function (error, info) {
