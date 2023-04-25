@@ -4,8 +4,8 @@ var nodemailer = require('nodemailer');
 const fs = require('fs');
 exports.create = async (req, res, next) => {
     try {
+        req.body.status = true
         const user = await User.create(req.body.account);
-        console.log(user);
         res.status(200).json({
             status: "create User success",
             data: { user }
@@ -42,7 +42,9 @@ exports.update = async (req, res, next) => {
 //delete
 exports.delete = async (req, res, next) => {
     try {
-        const user = await User.findByIdAndDelete(req.params.id);
+        const admin = await User.findByIdAndUpdate(req.params.id, {
+            status: false
+        });
         res.status(200).json({
             status: "deleted",
         })
@@ -53,7 +55,8 @@ exports.delete = async (req, res, next) => {
 //get all
 exports.getAll = async (req, res, next) => {
     try {
-        const user = await User.find({})
+        const results = await User.find({})
+const user = results.filter((e)=>e.status != false)
         res.status(200).json({
             status: "success",
             results: user.length,
@@ -80,7 +83,6 @@ exports.getOne = async (req, res, next) => {
 exports.login = async (req, res, next) => {
     try {
         const user = await User.findOne({ email: req.body.email });
-        console.log(user);
         if (!user) {
             const err = new Error('Email or Password is not correct');
             err.statusCode = 400;

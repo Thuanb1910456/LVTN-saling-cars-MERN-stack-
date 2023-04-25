@@ -30,24 +30,24 @@ function Footer(props) {
                     <div className='row'>
                         <div className='col-md-6'>
                             <ul>
-                                <Link to={'/'} className='text-primary mx-4 fw-bolder' > Home </Link>
+                                <Link to={'/'} className='text-primary mx-4 fw-bolder' > Trang chủ </Link>
                             </ul>
                             <ul>
-                                <Link to={'/'} className='text-primary mx-4 fw-bolder' > Products </Link>
+                                <Link to={'/products'} className='text-primary mx-4 fw-bolder' > Sản phẩm </Link>
                             </ul>
                             <ul>
-                                <Link to={'/'} className='text-primary mx-4 fw-bolder' > Contacts </Link>
+                                <Link to={'/contact'} className='text-primary mx-4 fw-bolder' > Liên hệ </Link>
                             </ul>
                         </div>
                         <div className='col-md-6'>
                             <ul>
-                                <Link to={'/'} className='text-primary mx-4 fw-bolder' > Abouts </Link>
+                                <Link to={'/abouts'} className='text-primary mx-4 fw-bolder' > về chúng tôi </Link>
                             </ul>
                             <ul>
-                                <Link to={'/'} className='text-primary mx-4 fw-bolder' > Blog </Link>
+                                <Link to={'/blog'} className='text-primary mx-4 fw-bolder' > Tin tức </Link>
                             </ul>
                             <ul>
-                                <Link to={'/'} className='text-primary mx-4 fw-bolder' > Login </Link>
+                                <Link to={'/login'} className='text-primary mx-4 fw-bolder' > Đăng nhập </Link>
                             </ul>
                         </div>
 

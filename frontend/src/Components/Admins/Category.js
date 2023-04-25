@@ -27,7 +27,7 @@ function Category(props) {
     }, [refresh])
     const deleteBrand = (id) => {
         axios
-            .put(`http://localhost:5000/api/type/status/${id}`)
+            .delete(`http://localhost:5000/api/type/${id}`)
             .then((res) => {
                 toast('Thương hiệu đã bị xóa.', {
                     position: "top-center",

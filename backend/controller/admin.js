@@ -1,6 +1,7 @@
 const Admin = require('../models/admin');
 exports.create = async (req, res, next) => {
     try {
+        req.body.status = true
         const admin = await Admin.create({
             ...req.body,
             chucvu: '6409a81c84766904c46cec8d'
@@ -29,7 +30,9 @@ exports.update = async (req, res, next) => {
 //delete
 exports.delete = async (req, res, next) => {
     try {
-        const admin = await Admin.findByIdAndDelete(req.params.id);
+        const admin = await Admin.findByIdAndUpdate(req.params.id,{
+            status: false
+        });
         res.status(200).json({
             status: "deleted",
         })
@@ -40,8 +43,9 @@ exports.delete = async (req, res, next) => {
 //get all
 exports.getAll = async (req, res, next) => {
     try {
-        const admin = await Admin.find({})
-        .populate('chucvu')
+        const results = await Admin.find({})
+            .populate('chucvu')
+        const admin = results.filter((e) => e.status != false)
         res.status(200).json({
             status: "success",
             results: admin.length,
@@ -55,7 +59,7 @@ exports.getAll = async (req, res, next) => {
 exports.getOneAccounts = async (req, res, next) => {
     try {
         const admin = await Admin.findById(req.params.id)
-        .populate('chucvu')
+            .populate('chucvu')
         console.log(admin);
         res.status(200).json({
             status: "success",

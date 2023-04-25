@@ -45,7 +45,7 @@ function Dahroash(props) {
     newoder = count?.length
     const data = {
         labels: ['Sản phẩm', 'Đơn hàng mới',
-            'Khách hàng', 'Nhân viên', 'Doanh thu / 100%'],
+            'Khách hàng', 'Nhân viên', 'Doanh thu / 10.000%'],
         datasets: [
             {
                 label: 'Biểu đồ thể hiện trực quan cửa hàng',
@@ -64,7 +64,7 @@ function Dahroash(props) {
                     'rgb(54, 162, 235)',
                 ],
                 borderWidth: 1,
-                data: [products.length, oder.length, customer.length, employee.length, totalValue / 100]
+                data: [products.length, oder.length, customer.length, employee.length, totalValue / 10000]
             }
         ]
     }
@@ -132,7 +132,7 @@ function Dahroash(props) {
                                     <p className="card-text mb-0">Tổng doanh thu</p>
                                     <h2 className="card-title">
                                         {
-                                            totalValue ? totalValue : 0
+                                            totalValue ?  new Intl.NumberFormat('vi').format(totalValue)  : 0 
                                         }
                                     </h2>
                                 </div>

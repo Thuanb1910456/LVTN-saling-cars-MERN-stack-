@@ -38,7 +38,8 @@ function ProfitByProduct(props) {
             setCalcs((prev) => prev.concat({ id: product._id, sold: count, profit: profit }));
             TotalProfit += profit
         })
-    }, [Products, Bill])
+        // eslint-disable-next-line
+    }, [Bill])
 
     const productsfind = (e) => {
         const temp = ProductFind.filter(element => element.name.toLowerCase().includes(e.target.value.toLowerCase()))

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown, faCommentDots, faCommentSms } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
+import ThreeSixty from 'react-360-view'
 function Details(props) {
     var { id } = useParams()
     var [Product, setProduct] = useState({})
@@ -96,26 +97,36 @@ function Details(props) {
         axios
             .get(`http://localhost:5000/api/products`)
             .then((res) => {
-                setProducts(res.data.data.cars.filter(e => e.type._id === Product.type._id));
+                setProducts(res.data.data.cars.filter(e => e.type?._id === Product.type?._id));
             })
         axios
             .get(`http://localhost:5000/api/comment/products/${id}`)
             .then((res) => {
-                setComments(res.data.data.comment)
+                setComments(res.data?.data?.comment.filter((e)=>(e.status === true)))
             })
         // eslint-disable-next-line
     }, [Product]);
+
 
     return (
         <Container fluid className='padding-header'>
             <ToastContainer />
 
             {Product.image && (
-                <Row Row >
+                <Row  >
                     <Col xs={12} sm={7} >
                         <div className='container'>
-                            <img src={`/image/SanPham/${Product.image}`} className='w-100' alt='...' />
-                        
+                            {
+                                Product._id === "642580f2026a6d9ccfb76647" ?
+                                    <ThreeSixty
+                                        amount={75}
+                                        imagePath="https://fastly-production.24c.in/webin/360"
+                                        fileName="output_{index}.jpeg"
+                                        spinReverse
+                                    />
+                                    : <img src={`/image/SanPham/${Product.image}`} className='w-100' alt='...' />
+                            }
+
                             <div className='mt-0 text-start ms-4'>
                                 <p className=' fw-bold mb-0 text-primary'>Sản phẩm tặng kèm kèm:</p>
                                 <span>

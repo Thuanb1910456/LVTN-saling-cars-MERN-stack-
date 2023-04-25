@@ -98,7 +98,7 @@ function ExportPDF(props) {
                                         <td>{item.id_product.name}</td>
                                         <td>{item.quantity}</td>
                                         <td>{item.id_product.price}</td>
-                                        <td>{item.id_product.price * item.quantity}</td>
+                                        <td>{new Intl.NumberFormat('vi').format( item.id_product.price * item.quantity )}</td>
                                         <td>{bill?.nhanvien}</td>
                                         <td>{bill?.sdtnhanvien}</td>
                                     </tr>
@@ -106,7 +106,7 @@ function ExportPDF(props) {
                             </tbody>
                         </table>
                         <Row className='text-center'>
-                            <h5 className='text-primary'>Tổng tiền cần thanh toán: {bill?.total}$</h5>
+                            <h5 className='text-primary'>Tổng tiền cần thanh toán:  {new Intl.NumberFormat('vi').format(bill?.total)} $</h5>
                             <Col sm={4}>
                                 <h5>Người mua hàng</h5>
                                 <span className='text-muted'>(ký, ghi rõ họ tên)</span>

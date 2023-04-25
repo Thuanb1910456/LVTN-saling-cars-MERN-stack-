@@ -7,6 +7,7 @@ const usersSchema = new mongoose.Schema({
     avt: { type: String },
     sdt: { type: String },
     adress:{type:String},
+    status: {type: Boolean},
 }, { timestamps: true })
 
 const User = mongoose.model('user', usersSchema);

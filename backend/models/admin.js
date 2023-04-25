@@ -12,7 +12,8 @@ const adminSchema = new mongoose.Schema({
     chucvu: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'position'
-    }
+    },
+    status: {type: Boolean},
 }, { timestamps: true })
 
 const Admin = mongoose.model('admins', adminSchema);

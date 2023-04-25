@@ -18,7 +18,7 @@ exports.create = async (req, res, next) => {
         }
     });
     req.body.status = true;
-    req.body.delete = false;
+    req.body.deleted = false;
     req.body.logo = req.files?.file?.name
     try {
         const cars = await Types.create(req.body);
@@ -69,7 +69,9 @@ exports.updateStatus = async (req, res, next) => {
 //delete
 exports.delete = async (req, res, next) => {
     try {
-        const cars = await Types.findByIdAndDelete(req.params.id);
+        const admin = await Types.findByIdAndUpdate(req.params.id, {
+            deleted: false
+        });
         res.status(200).json({
             status: "deleted",
         })
@@ -82,7 +84,7 @@ exports.getAll = async (req, res, next) => {
     try {
         var cars = []
         const temp = await Types.find({})
-        cars = temp.filter((e)=> e.status != false)
+        cars = temp.filter((e) =>  e.deleted != false)
         res.status(200).json({
             status: "success",
             results: cars.length,

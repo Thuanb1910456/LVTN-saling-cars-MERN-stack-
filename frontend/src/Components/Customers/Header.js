@@ -18,24 +18,24 @@ function Header(props) {
                     </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-1" as={NavLink} to={'/'}>home</Nav.Link>
+                    <Nav.Link eventKey="link-1" as={NavLink} to={'/'}>trang chủ</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-2" as={NavLink} to={'/products'}>products</Nav.Link>
+                    <Nav.Link eventKey="link-2" as={NavLink} to={'/products'}>sản phẩm</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-3" as={NavLink} to={'/contact'}>Contacts </Nav.Link>
+                    <Nav.Link eventKey="link-3" as={NavLink} to={'/contact'}>liên hệ </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <NavDropdown title="ABOUT US" menuVariant="dark">
-                        <NavDropdown.Item as={NavLink} to={'/blog'}>Blog</NavDropdown.Item>
-                        <NavDropdown.Item as={NavLink} to={'/abouts'}> Abouts us</NavDropdown.Item>
+                    <NavDropdown title=" về chúng tôi" menuVariant="dark">
+                        <NavDropdown.Item as={NavLink} to={'/blog'}>tin tức</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to={'/abouts'}> chúng tôi</NavDropdown.Item>
                     </NavDropdown>
                 </Nav.Item>
                 {
                     curentAccount !== null ?
                         <Nav.Item>
-                            <NavDropdown title={`Hello ${curentAccount.name}`} menuVariant="dark">
+                            <NavDropdown title={`Xin chào ${curentAccount.name}`} menuVariant="dark">
                                 <NavDropdown.Item as={NavLink} to={'/bill'}>Đơn hàng</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to={'/cart'}> Giỏ hàng</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to={'/myinfo'}>Thông tin cá nhân</NavDropdown.Item>
@@ -45,7 +45,7 @@ function Header(props) {
 
                         :
                         <Nav.Item>
-                            <Nav.Link eventKey="link-4" as={NavLink} to={'/login'}>Login </Nav.Link>
+                            <Nav.Link eventKey="link-4" as={NavLink} to={'/login'}>Đăng nhập </Nav.Link>
                         </Nav.Item>
                 }
             </Nav>
