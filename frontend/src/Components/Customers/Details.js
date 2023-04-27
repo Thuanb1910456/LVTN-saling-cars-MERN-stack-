@@ -102,7 +102,7 @@ function Details(props) {
         axios
             .get(`http://localhost:5000/api/comment/products/${id}`)
             .then((res) => {
-                setComments(res.data?.data?.comment.filter((e)=>(e.status === true)))
+                setComments(res.data?.data?.comment.filter((e) => (e.status === true)))
             })
         // eslint-disable-next-line
     }, [Product]);
@@ -122,7 +122,10 @@ function Details(props) {
                                         amount={75}
                                         imagePath="https://fastly-production.24c.in/webin/360"
                                         fileName="output_{index}.jpeg"
-                                        spinReverse
+                                        spinReverse="false"
+                                        autoplay="24"
+                                        loop="10"
+                                        isWheelZoom="false"
                                     />
                                     : <img src={`/image/SanPham/${Product.image}`} className='w-100' alt='...' />
                             }

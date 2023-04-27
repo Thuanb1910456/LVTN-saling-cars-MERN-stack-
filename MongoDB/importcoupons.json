@@ -1,0 +1,239 @@
+[{
+  "_id": {
+    "$oid": "642687a5cb4cec814195b163"
+  },
+  "total": 2290,
+  "nhanvien": {
+    "$oid": "63ec91d6b2a38d2e5be9f1ed"
+  },
+  "products": [
+    {
+      "_id": {
+        "$oid": "6425808a026a6d9ccfb7663c"
+      },
+      "name": "2014 Mercedes-Benz C-Class",
+      "price": 500,
+      "image": "2014-Mercedes-Benz-C-Class.png",
+      "describe": "Mercedes C200 Exclusive được xem là phiên bản thủ nhỏ của S-Class, bởi đây là mẫu xe sang trọng nhất trong dòng sedan cao cấp C-Class 2019 mới tại Việt Nam có giá niêm yết 1,709 tỷ đồng (chưa bao gồm khuyến mại tiền mặt và phụ kiện).",
+      "soluong": 10,
+      "giatien": 80,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "Số tự động",
+      "fuel": "xăng E95",
+      "color": "trắng ",
+      "wieght": "430kg"
+    },
+    {
+      "_id": {
+        "$oid": "642580f2026a6d9ccfb76647"
+      },
+      "name": "Mercedes-benz C300 2022",
+      "price": 2000,
+      "image": "MercedesC-Class2023.jpg",
+      "describe": "Mercedes-benz C300 2022 là mẫu xe hơi hiệu suất cao thuộc dòng C-class mới ra mắt tại Việt nam, mẫu xe này hướng đến tệp khách hàng trẻ tuổi và thành đạt, muốn thể hiện địa vị trong xã hội. Ở lần nâng cấp mới nhất này, C300 sẽ mang đến cho chủ nhân những cảm giác lại hoàn toàn khác biệt",
+      "soluong": 5,
+      "giatien": 70,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "số sàn ",
+      "fuel": "xăng E95",
+      "color": "đen",
+      "wieght": "400kg"
+    },
+    {
+      "_id": {
+        "$oid": "64258141026a6d9ccfb76650"
+      },
+      "name": "Mercedes C-Class 2023",
+      "price": 500,
+      "image": "Mercedes-benzC3002022.png",
+      "describe": "Được mệnh danh là “tiểu S-Class\" trong danh mục xe sedan hạng sang Mercedes-Benz, C-Class 2023 hoàn toàn mới sở hữu nhiều cải tiến vượt trội về thiết kế, trang bị ưu việt cùng khả năng vận hành mạnh mẽ từ khối động cơ mới. Mẫu xe hiện phân phối tại Việt Nam với 4 phiên bản, cùng mức giá bán khởi điểm hấp dẫn chỉ từ 1,699 tỉ đồng.",
+      "soluong": 5,
+      "giatien": 60,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "tự động",
+      "fuel": "xăng E95",
+      "color": "đen",
+      "wieght": "430kg"
+    },
+    {
+      "_id": {
+        "$oid": "642581ac026a6d9ccfb76661"
+      },
+      "name": "Lamborghini Aventador LP700-4",
+      "price": 6000,
+      "image": "Lamborghini-Aventador-LP700-4.jpg",
+      "describe": "Siêu xe Lamborghini Aventador LP700-4 bằng vàng đính kim cương này là tác phẩm của nhà thiết kế và chuyên gia xe mô hình người Đức, ông Robert Guelpen tạo ra. Chiếc xe có tỉ lệ 1:8 làm từ 1.400 viên kim cương, bạch kim và vàng nguyên chất.",
+      "soluong": 3,
+      "giatien": 80,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "tự động",
+      "fuel": "xăng E95",
+      "color": "Vàng ánh kim",
+      "wieght": "450kg"
+    },
+    {
+      "_id": {
+        "$oid": "64258217026a6d9ccfb7666d"
+      },
+      "name": "Lamborghini Huracan STO",
+      "price": 350,
+      "image": "LamborghiniHuraCan-STO.jpg",
+      "describe": "Với tên gọi STO – Super Trofeo Omologata, là một phiên bản đường trường của mẫu xe đua Squadra Corse, đồng thời đóng vai trò là mẫu xe kế nhiệm Huracan Performante. Tuy chỉ trang bị hệ dẫn động cầu sau nhưng Huracan STO được xếp trên phiên bản EVO.",
+      "soluong": 5,
+      "giatien": 120,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "tự động",
+      "fuel": "xăng E95",
+      "color": "Trắng",
+      "wieght": "400kg"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-31T07:11:33.412Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-31T07:11:33.412Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642bde305a9554b2e1324244"
+  },
+  "total": 7500,
+  "nhanvien": {
+    "$oid": "63ec91d6b2a38d2e5be9f1ed"
+  },
+  "products": [
+    {
+      "_id": {
+        "$oid": "642581ac026a6d9ccfb76661"
+      },
+      "name": "Lamborghini Aventador LP700-4",
+      "price": 6000,
+      "image": "Lamborghini-Aventador-LP700-4.jpg",
+      "describe": "Siêu xe Lamborghini Aventador LP700-4 bằng vàng đính kim cương này là tác phẩm của nhà thiết kế và chuyên gia xe mô hình người Đức, ông Robert Guelpen tạo ra. Chiếc xe có tỉ lệ 1:8 làm từ 1.400 viên kim cương, bạch kim và vàng nguyên chất.",
+      "soluong": 50,
+      "giatien": 150,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "tự động",
+      "fuel": "xăng E95",
+      "color": "Vàng ánh kim",
+      "wieght": "450kg"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-04T08:22:08.677Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-04T08:22:08.677Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642bde6b5a9554b2e132424c"
+  },
+  "total": 7500,
+  "nhanvien": {
+    "$oid": "63ec91d6b2a38d2e5be9f1ed"
+  },
+  "products": [
+    {
+      "_id": {
+        "$oid": "642581ac026a6d9ccfb76661"
+      },
+      "name": "Lamborghini Aventador LP700-4",
+      "price": 6000,
+      "image": "Lamborghini-Aventador-LP700-4.jpg",
+      "describe": "Siêu xe Lamborghini Aventador LP700-4 bằng vàng đính kim cương này là tác phẩm của nhà thiết kế và chuyên gia xe mô hình người Đức, ông Robert Guelpen tạo ra. Chiếc xe có tỉ lệ 1:8 làm từ 1.400 viên kim cương, bạch kim và vàng nguyên chất.",
+      "soluong": 50,
+      "giatien": 150,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "tự động",
+      "fuel": "xăng E95",
+      "color": "Vàng ánh kim",
+      "wieght": "450kg"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-04T08:23:07.228Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-04T08:23:07.228Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642fea8d4e486812029df25e"
+  },
+  "total": 5000,
+  "nhanvien": {
+    "$oid": "63ec91d6b2a38d2e5be9f1ed"
+  },
+  "products": [
+    {
+      "_id": {
+        "$oid": "6425808a026a6d9ccfb7663c"
+      },
+      "name": "2014 Mercedes-Benz C-Class",
+      "price": 500,
+      "image": "MercedesC-Class2023.jpg",
+      "describe": "Mercedes C200 Exclusive được xem là phiên bản thủ nhỏ của S-Class, bởi đây là mẫu xe sang trọng nhất trong dòng sedan cao cấp C-Class 2019 mới tại Việt Nam có giá niêm yết 1,709 tỷ đồng (chưa bao gồm khuyến mại tiền mặt và phụ kiện).",
+      "soluong": 50,
+      "giatien": 100,
+      "status": false,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "Số tự động",
+      "fuel": "xăng E95",
+      "color": "trắng ",
+      "wieght": "430kg"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-07T10:03:57.012Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-07T10:03:57.012Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6430e06669b1be1b1de6cc1c"
+  },
+  "total": 2500,
+  "nhanvien": {
+    "$oid": "63ec91d6b2a38d2e5be9f1ed"
+  },
+  "products": [
+    {
+      "_id": {
+        "$oid": "6425850e026a6d9ccfb766d3"
+      },
+      "name": "BMW 420i 2022",
+      "price": 450,
+      "image": "BMW-420i-2022.png",
+      "describe": "BMW 420i 2022 ra mắt là sự kết hợp đỉnh cao giữa các đường nét thể thao và tính sang trọng của một mẫu xe Coupe đến từ Đức. Mang trong mình tất cả tinh hoa của BMW Motors và những trang bị công nghệ thời thượng nhất. BMW 420i 2022 đang là con bài chiến lược của BMW trong thời gian tới tại thị trường việt Nam, cạnh tranh trực tiếp với các đối thủ trong cùng phân khúc như Audi A4, Lexus ES 250…",
+      "soluong": 50,
+      "giatien": 50,
+      "status": true,
+      "ghichu": "chưa ghi chú",
+      "loaiso": "tự động",
+      "fuel": "xăng E95",
+      "color": "Vàng ánh kim",
+      "wieght": "450kg"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-08T03:32:54.985Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-08T03:32:54.985Z"
+  },
+  "__v": 0
+}]

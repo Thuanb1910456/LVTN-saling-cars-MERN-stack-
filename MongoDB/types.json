@@ -1,0 +1,129 @@
+[{
+  "_id": {
+    "$oid": "63ecb51345d7c68cc56a17fe"
+  },
+  "name": "mescedes",
+  "logo": "Mercedes.png",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-02-15T10:33:55.132Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T10:09:20.956Z"
+  },
+  "__v": 0,
+  "deleted": false
+},{
+  "_id": {
+    "$oid": "63f7442ead5d766c23281c20"
+  },
+  "name": "lamborghini",
+  "logo": "lamborghini.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-02-23T10:47:10.183Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:39:53.720Z"
+  },
+  "__v": 0,
+  "deleted": false
+},{
+  "_id": {
+    "$oid": "64258a2f026a6d9ccfb76791"
+  },
+  "name": "maybach",
+  "logo": "maybach.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-03-30T13:10:07.159Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:42:57.249Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64258a4d026a6d9ccfb76795"
+  },
+  "name": "mazda",
+  "logo": "mazda.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-03-30T13:10:37.517Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:42:46.573Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64258a58026a6d9ccfb76798"
+  },
+  "name": "bmw",
+  "logo": "bmw.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-03-30T13:10:48.659Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:42:44.852Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64258a68026a6d9ccfb7679b"
+  },
+  "name": "ranger",
+  "logo": "ranger.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-03-30T13:11:04.690Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:42:43.624Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64258a77026a6d9ccfb7679e"
+  },
+  "name": "rollroyce",
+  "logo": "rollroyce.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-03-30T13:11:19.956Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:42:41.174Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64258a90026a6d9ccfb767a2"
+  },
+  "name": "toyota",
+  "logo": "toyota.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-03-30T13:11:44.025Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:42:39.958Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64258a9e026a6d9ccfb767a5"
+  },
+  "name": "vinfast",
+  "logo": "vinfast.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2023-03-30T13:11:58.942Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:42:38.465Z"
+  },
+  "__v": 0
+}]

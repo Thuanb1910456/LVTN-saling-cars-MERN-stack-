@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "6436709c8f93e60c30c0cbee"
+  },
+  "customer": {
+    "$oid": "643466efec5de8df2cad00b9"
+  },
+  "deliveryAddress": [
+    {
+      "address": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+      "_id": {
+        "$oid": "6436709c8f93e60c30c0cbef"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-12T08:49:32.785Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-12T08:49:32.785Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64422b03dd78d2194f95db0e"
+  },
+  "customer": {
+    "$oid": "643fb7b2ab9e421e0d7bf1ba"
+  },
+  "deliveryAddress": [
+    {
+      "address": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+      "_id": {
+        "$oid": "64422b03dd78d2194f95db0f"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-21T06:19:47.850Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-21T06:19:47.850Z"
+  },
+  "__v": 0
+}]

@@ -23,14 +23,18 @@ function Home(props) {
             return (
                 <Col xs={12} md={4} sm={6} key={idx} className='g-3'>
                     <Card className='card border-success border border-2'>
-                        <Card.Img variant="top" src={`/image/SanPham/${item.image}`} style={{ width: "auto", height: "400px", maxHeight: "300px" }} />
-                        <Card.Body>
+                        <Link to={`/detail/${item._id}`}>
+                            <Card.Img variant="top" src={`/image/SanPham/${item.image}`} style={{ width: "auto", height: "400px", maxHeight: "300px" }} />
+                        </Link>
+                        <Card.Body className='bg-light'>
                             <Card.Title>{item.name}</Card.Title>
                             <Card.Text className='text-line'>
                                 <span className='text-primary fw-bold'>{new Intl.NumberFormat('vi').format(item.price)} $</span> <br />
                                 <span>{item.describe}</span>
                             </Card.Text>
-                            <Link className="text-primary fw-bolder" to={`/detail/${item._id}`}>Xem thông tin chi tiết</Link>
+                            <Card.Title >
+                                <Link className="text-primary fw-bolder" to={`/detail/${item._id}`} >Xem chi tiết</Link>
+                            </Card.Title>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -41,13 +45,15 @@ function Home(props) {
                 <Col xs={12} md={4} sm={6} key={idx} className='g-3'>
                     <Card className='card border-light border border-5' >
                         <Card.Img variant="top" src={`/image/SanPham/${item.image}`} style={{ width: "auto", height: "400px", maxHeight: "300px" }} />
-                        <Card.Body>
+                        <Card.Body className='bg-light'>
                             <Card.Title>{item.name}</Card.Title>
                             <Card.Text className='text-line'>
                                 <span className='text-primary fw-bold'>{new Intl.NumberFormat('vi').format(item.price)} $</span> <br />
                                 <span>{item.describe}</span>
                             </Card.Text>
-                            <Link className="text-danger fw-bolder" to={`/detail/${item._id}`} style={{ pointerEvents: "none" }}>Sản phẩm tạm ngừng cung cấp</Link>
+                            <Card.Title >
+                                <Link className="text-danger fw-bolder" to={`/detail/${item._id}`} style={{ pointerEvents: "none" }}>Tạm hết hàng</Link>
+                            </Card.Title>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -109,7 +115,7 @@ function Home(props) {
                     </div>
                 </Row>
                 <Row className='m-0'>
-                    <h1 style={{ textTransform: "uppercase", color: "rgb(200,16,46)" }}>sản phẩm nổi bật</h1>
+                    <h1 style={{ textTransform: "uppercase", color: "rgb(200,16,46)" }}>thương hiệu xe hạng cao cấp </h1>
                     {Products.map((item, idx) => {
                         return idx < 6 && (
                             renderProducts(item, idx)
@@ -117,7 +123,7 @@ function Home(props) {
                     })}
                 </Row>
                 <Row className='mt-3 mb-2 g-3'>
-                    <h1 style={{ textTransform: "uppercase", color: "rgb(200,16,46)" }}>Sản phẩm bán chạy nhất trong năm</h1>
+                    <h1 style={{ textTransform: "uppercase", color: "rgb(200,16,46)" }}>thương hiệu bán chạy nhất trong năm</h1>
                     {Products.map((item, idx) => {
                         return idx >= 6 && idx < 12 && (
                             renderProducts(item, idx)

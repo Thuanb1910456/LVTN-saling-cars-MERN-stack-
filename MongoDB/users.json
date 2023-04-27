@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "643fb7b2ab9e421e0d7bf1ba"
+  },
+  "name": "Nguyễn Thuận",
+  "email": "thuannguyennguyen2006@gmail.com",
+  "password": "",
+  "avt": "hinh-nen-meo-con-de-thuong_s943.jpg",
+  "sdt": "0786877893",
+  "adress": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+  "createdAt": {
+    "$date": "2023-04-19T09:43:14.183Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:36:53.209Z"
+  },
+  "__v": 0,
+  "status": true
+},{
+  "_id": {
+    "$oid": "6447a310926bd81da9e2ba55"
+  },
+  "name": "Nguyen Van Minh Thuan B1910456",
+  "email": "thuanb1910456@student.ctu.edu.vn",
+  "password": "",
+  "avt": "Avatartrang.jpg",
+  "sdt": "",
+  "adress": "",
+  "createdAt": {
+    "$date": "2023-04-25T09:53:20.124Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:53:31.801Z"
+  },
+  "__v": 0,
+  "status": true
+}]

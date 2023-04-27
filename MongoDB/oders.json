@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "643466fdec5de8df2cad00c9"
+  },
+  "products": [],
+  "customer": {
+    "$oid": "643466efec5de8df2cad00b9"
+  },
+  "createdAt": {
+    "$date": "2023-04-10T19:43:57.627Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-19T09:33:03.475Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64422acedd78d2194f95daf3"
+  },
+  "products": [],
+  "customer": {
+    "$oid": "643fb7b2ab9e421e0d7bf1ba"
+  },
+  "createdAt": {
+    "$date": "2023-04-21T06:18:54.341Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-26T11:19:46.123Z"
+  },
+  "__v": 0
+}]

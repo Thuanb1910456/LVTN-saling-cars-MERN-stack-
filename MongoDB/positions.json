@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6409a81c84766904c46cec8d"
+  },
+  "tenchucvu": "nhân viên",
+  "luong": "10000"
+},{
+  "_id": {
+    "$oid": "6409a84684766904c46cec8e"
+  },
+  "tenchucvu": "quản lý",
+  "luong": "5000000"
+}]

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faCheckToSlot, faCircleXmark, faCommentMedical, faFilter, faTrashCanArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
+import ReactPaginate from 'react-paginate';
 function Bill(props) {
     const [show, setShow] = useState('')
     const [bill, setBill] = useState([])
@@ -11,6 +12,8 @@ function Bill(props) {
     const [refresh, setRefresh] = useState(0)
     const [showModal, setShowModal] = useState(false)
     const [feedback, setFeedback] = useState({})
+    const [start, setStart] = useState(0)
+
     const curentAccount = localStorage.currentAccount ? JSON.parse(localStorage.currentAccount) : null
     useLayoutEffect(() => {
         async function fetchData() {
@@ -200,6 +203,16 @@ function Bill(props) {
                 );
             })
     }
+
+    const end = start + 2;
+    const dataPage = bill.reverse().slice(start, end);
+    // setBill(dataPage)
+    const pageCount = Math.ceil(bill.length / 2);
+    const handlePageClick = (event) => {
+        const number = (event.selected * 2) % bill.length;
+        setStart(number);
+    };
+
     return (
         <Container fluid className='padding-header'>
             <ToastContainer />
@@ -272,7 +285,7 @@ function Bill(props) {
                     bill !== undefined && bill.length !== 0 ?
                         <tbody>
                             {
-                                bill.reverse().map((value, idx) => {
+                                dataPage.map((value, idx) => {
                                     return [
                                         value.products.map((item, i) => {
                                             return (
@@ -311,7 +324,28 @@ function Bill(props) {
                         </tbody>
                 }
             </table>
+            <ReactPaginate
+                previousLabel="Trang trước"
+                nextLabel="Trang sau"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                pageCount={pageCount}
+                pageRangeDisplayed={4}
+                marginPagesDisplayed={2}
+                onPageChange={handlePageClick}
+                containerClassName="pagination justify-content-center mt-5"
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                activeClassName="active"
+                hrefAllControls
+                // forcePage={currentPage}
 
+            />
         </Container>
     );
 }

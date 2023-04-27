@@ -1,0 +1,93 @@
+[{
+  "_id": {
+    "$oid": "63ec91d6b2a38d2e5be9f1ed"
+  },
+  "hoten": "Nguyễn Văn Minh Thuận ( admin )",
+  "email": "admin@gmail.com",
+  "password": "123456",
+  "avt": "avt.png",
+  "sdt": "0786877893",
+  "adress": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+  "sex": "nữ",
+  "date": "26/02/2017",
+  "createdAt": {
+    "$date": "2023-02-15T08:03:34.567Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-19T08:11:49.384Z"
+  },
+  "__v": 0,
+  "chucvu": {
+    "$oid": "6409a84684766904c46cec8e"
+  },
+  "status": "true"
+},{
+  "_id": {
+    "$oid": "64345f01ec5de8df2cacfb90"
+  },
+  "hoten": "Nhân viên 1",
+  "email": "nhanvien1@gmail.com",
+  "password": "123456",
+  "avt": "avt.png",
+  "sdt": "0786877893",
+  "adress": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+  "sex": "nữ",
+  "date": "26/02/2017",
+  "chucvu": {
+    "$oid": "6409a81c84766904c46cec8d"
+  },
+  "createdAt": {
+    "$date": "2023-04-10T19:09:53.681Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:34:00.744Z"
+  },
+  "__v": 0,
+  "status": true
+},{
+  "_id": {
+    "$oid": "64345f2fec5de8df2cacfb94"
+  },
+  "hoten": "nhân viên 2",
+  "email": "nhanvien2@gmail.com",
+  "password": "123456",
+  "avt": "avt.png",
+  "sdt": "0125665221",
+  "adress": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+  "sex": "nam",
+  "date": "24-03-2023",
+  "chucvu": {
+    "$oid": "6409a81c84766904c46cec8d"
+  },
+  "createdAt": {
+    "$date": "2023-04-10T19:10:39.412Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T09:33:05.051Z"
+  },
+  "__v": 0,
+  "status": true
+},{
+  "_id": {
+    "$oid": "6447a8464c1703a35b7b52af"
+  },
+  "hoten": "Nguyễn Thị Bánh Bèo 3",
+  "email": "nhanvien3@gmail.com",
+  "password": "123456",
+  "avt": "hinh-nen-meo-con-de-thuong_s943.jpg",
+  "sdt": "0786877893",
+  "adress": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+  "sex": "nam",
+  "date": "26/02/2017",
+  "chucvu": {
+    "$oid": "6409a81c84766904c46cec8d"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2023-04-25T10:15:34.975Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-25T10:15:53.831Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "64424993d8e6eb5ad3133550"
+  },
+  "status": true,
+  "name": "Nguyễn Văn Minh Thuận",
+  "email": "thuannguyennguyen2006@gmail.com",
+  "sdt": "0786877893",
+  "content": "Làm ơn tư vấn dùm tôi chiếc xe này",
+  "adress": "232/19A 30/4 Hưng Lợi - Ninh Kiều - Cần Thơ",
+  "image": "C:\\fakepath\\LamborghiniHuraCan-STO.jpg",
+  "createdAt": {
+    "$date": "2023-04-21T08:30:11.924Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-21T08:37:00.191Z"
+  },
+  "__v": 0
+}]

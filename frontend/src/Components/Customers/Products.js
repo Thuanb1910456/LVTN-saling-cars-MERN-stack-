@@ -4,11 +4,56 @@ import { faCaretRight, faCheck, faMicrophone, } from '@fortawesome/free-solid-sv
 import { Row, Col, Card, Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 function Products(props) {
     const [type, setType] = useState([])
     const [sort, setSort] = useState('')
     const [Products, setProducts] = useState([])
     const [ProductFind, setProductFind] = useState([])
+    const [start, setStart] = useState(0);
+    //pagination
+    function PaginatedItems({ itemsPerPage }) {
+        const end = start + itemsPerPage;
+        const dataPage = Products.slice(start, end);
+        const pageCount = Math.ceil(Products.length / itemsPerPage);
+        const handlePageClick = (event) => {
+            const number = (event.selected * itemsPerPage) % Products.length;
+            setStart(number);
+        };
+        const currentPage = Math.round(Products.length / itemsPerPage);
+        return (
+            <Row>
+                {
+                    dataPage.length === 0 ? <h4 className='text-danger fw-bold'>Không có sản phẩm nào được tìm thấy</h4> :
+                        dataPage.map((item, idx) => (
+                            renderProducts(item, idx)
+                        ))
+                }
+                <ReactPaginate
+                    previousLabel="Trang trước"
+                    nextLabel="Trang sau"
+                    breakLabel="..."
+                    breakClassName="page-item"
+                    breakLinkClassName="page-link"
+                    pageCount={pageCount}
+                    pageRangeDisplayed={4}
+                    marginPagesDisplayed={2}
+                    onPageChange={handlePageClick}
+                    containerClassName="pagination justify-content-center mt-5"
+                    pageClassName="page-item"
+                    pageLinkClassName="page-link"
+                    previousClassName="page-item"
+                    previousLinkClassName="page-link"
+                    nextClassName="page-item"
+                    nextLinkClassName="page-link"
+                    activeClassName="active"
+                    hrefAllControls
+                    forcePage={currentPage}
+
+                />
+            </Row>
+        );
+    }
     //voice
     const SpeechToText = window.speechRecognition || window.webkitSpeechRecognition;
     var speechApi = new SpeechToText();
@@ -46,7 +91,9 @@ function Products(props) {
             return (
                 <Col xs={12} md={6} sm={6} key={idx} className='g-3'>
                     <Card className='card cardProduct border-success border border-2' >
-                        <Card.Img variant="top" src={`/image/SanPham/${item.image}`} className='w-100' />
+                        <Link to={`/detail/${item._id}`}>
+                            <Card.Img variant="top" src={`/image/SanPham/${item.image}`} className='w-100' />
+                        </Link>
                         <Card.Body>
                             <Card.Title className='text-uppercase mt-3'>{item.name}</Card.Title>
                             <Card.Subtitle className='text-line'>
@@ -106,7 +153,7 @@ function Products(props) {
                             </div>
                         </Card.Body>
                         <Card.Title className='footer-card'>
-                            <Link className="text-danger fw-bolder" to={`/detail/${item._id}`} style={{ pointerEvents: "none" }}>Sản phẩm tạm ngừng cung cấp</Link>
+                            <Link className="text-danger fw-bolder" to={`/detail/${item._id}`} style={{ pointerEvents: "none" }}>Tạm hết hàng</Link>
                         </Card.Title>
                     </Card>
                 </Col>
@@ -116,7 +163,7 @@ function Products(props) {
     function renderType(item, idx) {
         if (item.status) {
             return (
-                <h5 key={idx} className='m-1 text-start text-uppercase'>
+                <h5 key={idx} className='m-1 text-start text-uppercase type' >
                     <Link className=" text-dark" onClick={() => ProductType(item.name)}><img src={`/image/ThuongHieu/${item.logo}`} alt='...' style={{ width: "50px" }} className='m-3' />{item.name}</Link>
                 </h5>
             )
@@ -128,25 +175,25 @@ function Products(props) {
         setProducts(temp)
     }
 
-useEffect(()=>{
-    if (sort === 'Từ thấp đến cao') {
-        axios
-        .get('http://localhost:5000/api/products')
-        .then((res) => {
-            const temp = (res?.data?.data?.cars.filter((e) => (e.deleted !== true))).sort((a, b) => (a.price - b.price))
-            setProducts(temp)
-        })
-    }
-    else if (sort === "Từ cao đến thấp") {
-        axios
-        .get('http://localhost:5000/api/products')
-        .then((res) => {
-            // console.log(res);
-            const temp = (res?.data?.data?.cars.filter((e) => (e.deleted !== true))).sort((a, b) => (b.price - a.price))
-            setProducts(temp)
-        })
-    }
-},[sort,Products])
+    useEffect(() => {
+        if (sort === 'Từ thấp đến cao') {
+            axios
+                .get('http://localhost:5000/api/products')
+                .then((res) => {
+                    const temp = (res?.data?.data?.cars.filter((e) => (e.deleted !== true))).sort((a, b) => (a.price - b.price))
+                    setProducts(temp)
+                })
+        }
+        else if (sort === "Từ cao đến thấp") {
+            axios
+                .get('http://localhost:5000/api/products')
+                .then((res) => {
+                    // console.log(res);
+                    const temp = (res?.data?.data?.cars.filter((e) => (e.deleted !== true))).sort((a, b) => (b.price - a.price))
+                    setProducts(temp)
+                })
+        }
+    }, [sort, Products])
 
 
     //voice
@@ -173,6 +220,7 @@ useEffect(()=>{
             };
         });
     }
+
     return (
         <div >
             <video controls autoPlay muted loop preload='auto' className='w-100'>
@@ -191,9 +239,9 @@ useEffect(()=>{
                     </div>
                 </Row>
                 <Row >
-                    <Col xs={3}>
-                        <div className='text-start bg-light p-3 ' style={{ position: 'sticky', zIndex: 1000 }}>
-                            <h2 style={{ color: "rgb(255,142,81)", textTransform: "uppercase" }}> <Icon icon={faCaretRight} className='me-1 mt-1' />Thương hiệu</h2>
+                    <Col xs={3} >
+                        <div className='text-start bg-light p-3 ' style={{ position: 'sticky', zIndex: 1000, fontFamily: "cursive" }}>
+                            <h4 style={{ color: "rgb(255,142,81)", textTransform: "uppercase" }}> <Icon icon={faCaretRight} className='me-1 mt-1' />Tất cả các dòng xe</h4>
                             {
                                 type.map((item, idx) => (
                                     renderType(item, idx)
@@ -201,18 +249,18 @@ useEffect(()=>{
                             }
                         </div>
                         <div className='text-start bg-light mt-5 p-3' style={{ position: 'sticky', zIndex: 1000 }}>
-                            <h2 style={{ color: "rgb(255,142,81)", textTransform: "uppercase" }}  > <Icon icon={faCaretRight} className='me-1 mt-1' />Giá tiền</h2>
+                            <h4 style={{ color: "rgb(255,142,81)", textTransform: "uppercase" }}  > <Icon icon={faCaretRight} className='me-1 mt-1' />Giá tiền</h4>
                             <Row className='m-1 d-flex text-primary'>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label="Từ thấp đến cao" name='price' value={'Từ thấp đến cao'} onChange={(e)=>{
+                                    <Form.Check inline type='radio' label="Từ thấp đến cao" name='price' value={'Từ thấp đến cao'} onChange={(e) => {
                                         setSort(e.target.value)
-                                        
+
                                     }} />
                                 </Col>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label="Từ cao đến thấp" name='price' value={'Từ cao đến thấp'} onChange={(e)=>{
+                                    <Form.Check inline type='radio' label="Từ cao đến thấp" name='price' value={'Từ cao đến thấp'} onChange={(e) => {
                                         setSort(e.target.value)
-                                        
+
                                     }} />
                                 </Col>
                                 <Col sm={6}>
@@ -238,15 +286,10 @@ useEffect(()=>{
                     </Col>
                     <Col xs={9}>
                         <Row className='d-flex'>
-                            <h2 className='bg-light text-start text-info fw-bold py-2 text-uppercase'>  <Icon icon={faCaretRight} className='me-2 mt-1' />Danh sách sản phẩm</h2>
+                            <h2 className='bg-light text-start text-info fw-bold py-2 text-uppercase'>  <Icon icon={faCaretRight} className='me-2 mt-1' />tất cả sản phẩm</h2>
                         </Row>
                         <Row>
-                            {
-                                Products.length === 0 ? <h4 className='text-danger fw-bold'>Không có sản phẩm nào được tìm thấy</h4> :
-                                    Products.map((item, idx) => (
-                                        renderProducts(item, idx)
-                                    ))
-                            }
+                            <PaginatedItems itemsPerPage={4} />
                         </Row>
                     </Col>
                 </Row>
