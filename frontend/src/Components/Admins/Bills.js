@@ -4,6 +4,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faFilter, faPrint } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios'
 import { Link } from "react-router-dom"
+import ReactPaginate from 'react-paginate';
 function Bills(props) {
     const [show, setShow] = useState('')
     const [bill, setBill] = useState([])
@@ -29,6 +30,17 @@ function Bills(props) {
         const temp = filterBill.filter(element => element.customer.name.toLowerCase().includes(e.target.value.toLowerCase()))
         setBill(temp)
     }
+
+
+    //pagination
+    const [start, setStart] = useState(0)
+    const end = start + 2;
+    const dataPage = bill.slice(start, end);
+    const pageCount = Math.ceil(bill.length / 2);
+    const handlePageClick = (event) => {
+        const number = (event.selected * 2) % bill.length;
+        setStart(number);
+    };
 
     return (
         <div className='boder-main'>
@@ -71,10 +83,10 @@ function Bills(props) {
                             </tr>
                         </thead>
                         {
-                            bill !== undefined && bill.length !== 0 ?
+                            dataPage !== undefined && dataPage.length !== 0 ?
                                 <tbody>
                                     {
-                                        bill.reverse().map((value, idx) => {
+                                        dataPage.reverse().map((value, idx) => {
                                             return [
                                                 value.products.map((item, i) => {
                                                     return (
@@ -112,6 +124,28 @@ function Bills(props) {
                                 </tbody>
                         }
                     </table>
+                    <ReactPaginate
+                        previousLabel="Trang trước"
+                        nextLabel="Trang sau"
+                        breakLabel="..."
+                        breakClassName="page-item"
+                        breakLinkClassName="page-link"
+                        pageCount={pageCount}
+                        pageRangeDisplayed={4}
+                        marginPagesDisplayed={2}
+                        onPageChange={handlePageClick}
+                        containerClassName="pagination justify-content-center mt-5"
+                        pageClassName="page-item"
+                        pageLinkClassName="page-link"
+                        previousClassName="page-item"
+                        previousLinkClassName="page-link"
+                        nextClassName="page-item"
+                        nextLinkClassName="page-link"
+                        activeClassName="active"
+                        hrefAllControls
+                    // forcePage={currentPage}
+
+                    />
                 </div>
             </div>
         </div>

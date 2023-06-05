@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { format, parse } from 'date-fns';
+import { ToastContainer, toast } from 'react-toastify';
 function ProfitOverTime(props) {
     const [Bill, setBill] = useState([])
     const [filterBill, setFilterBill] = useState([])
@@ -24,7 +25,15 @@ function ProfitOverTime(props) {
     useEffect(() => {
         if (filterBill) {
             if (startDate !== '' && endDate !== '' && startDate > endDate) {
-                alert("Start Date should be before End Date")
+                toast.error('Ngày kết thúc phải lớn hơn ngày bắt đầu.', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                })
             }
             else {
                 var dateBill = []
@@ -60,6 +69,7 @@ function ProfitOverTime(props) {
 
     return (
         <div className='boder-main'>
+            <ToastContainer />
             <div className='m-0 d-flex'>
                 <div className='mx-auto fw-bold' >
                     <h2 className='text-primary text-uppercase'>doanh thu bán hàng</h2>

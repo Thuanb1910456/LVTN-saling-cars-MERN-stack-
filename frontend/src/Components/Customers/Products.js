@@ -127,7 +127,7 @@ function Products(props) {
         else {
             return (
                 <Col xs={12} md={6} sm={6} key={idx} className='g-3'>
-                    <Card className='card cardProduct border border-5' >
+                    <Card className='card cardProduct border-success border border-2' >
                         <Card.Img variant="top" src={`/image/SanPham/${item.image}`} className='w-100' />
                         <Card.Body>
                             <Card.Title className='text-uppercase mt-3'>{item.name}</Card.Title>
@@ -171,7 +171,7 @@ function Products(props) {
     }
 
     const setPrice = (e) => {
-        const temp = (ProductFind.filter(element => element.price <= e.target.value))
+        const temp = (ProductFind.filter(element => element.price < e.target.value))
         setProducts(temp)
     }
 
@@ -264,22 +264,22 @@ function Products(props) {
                                     }} />
                                 </Col>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label=" < 100$" value={100} name='price' onChange={setPrice} />
+                                    <Form.Check inline type='radio' label=" Nhỏ hơn 100$" value={100} name='price' onChange={setPrice} />
                                 </Col>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label=" < 200$" value={200} name='price' onChange={setPrice} />
+                                    <Form.Check inline type='radio' label=" Nhỏ hơn 200$" value={200} name='price' onChange={setPrice} />
                                 </Col>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label=" < 300$" value={300} name='price' onChange={setPrice} />
+                                    <Form.Check inline type='radio' label=" Nhỏ hơn 300$" value={300} name='price' onChange={setPrice} />
                                 </Col>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label=" < 400$" value={400} name='price' onChange={setPrice} />
+                                    <Form.Check inline type='radio' label=" Nhỏ hơn 400$" value={400} name='price' onChange={setPrice} />
                                 </Col>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label=" < 500$" value={500} name='price' onChange={setPrice} />
+                                    <Form.Check inline type='radio' label=" Nhỏ hơn 500$" value={500} name='price' onChange={setPrice} />
                                 </Col>
                                 <Col sm={6}>
-                                    <Form.Check inline type='radio' label=" < 1000$" value={1000} name='price' onChange={setPrice} />
+                                    <Form.Check inline type='radio' label=" Nhỏ hơn 1000$" value={1000} name='price' onChange={setPrice} />
                                 </Col>
                             </Row>
                         </div>

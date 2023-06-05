@@ -4,6 +4,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faCheckDouble, faCircleXmark, faFilter, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import ReactPaginate from 'react-paginate';
 function Oder(props) {
     const [show, setShow] = useState('')
     const [bill, setBill] = useState([])
@@ -12,12 +13,13 @@ function Oder(props) {
     const [listAccount, setListAccount] = useState([])
     const [showListAccount, setShowListAccount] = useState(false)
     const curentAccount = localStorage.admin ? JSON.parse(localStorage.admin) : null
+
     useLayoutEffect(() => {
         async function fetchData() {
             await axios.get('http://localhost:5000/api/bill')
                 .then((res) => {
                     const temp = res.data.data.bill.filter((e) => (e.status !== 'Đã giao hàng thành công'))
-                    setBill(temp)
+                    setBill(temp.reverse())
                     setFilterBill(temp)
                 })
             await axios.get('http://localhost:5000/api/admin/nhanvien')
@@ -115,7 +117,7 @@ function Oder(props) {
                         </button>
                     </td>
                     <td>
-                        <button className='btn btn-outline-danger' disabled>
+                        <button className='btn btn-outline-danger' onClick={() => updateStatus(id, "Đơn hàng đã bị hủy bỏ")}>
                             <Icon icon={faCircleXmark} />
                         </button>
                     </td>
@@ -186,6 +188,17 @@ function Oder(props) {
             )
         }
     }
+
+    //pagination
+    const [start, setStart] = useState(0)
+    const end = start + 2;
+    const dataPage = bill.slice(start, end);
+    const pageCount = Math.ceil(bill.length / 2);
+    const handlePageClick = (event) => {
+        const number = (event.selected * 2) % bill.length;
+        setStart(number);
+    };
+
     return (
         <div className='boder-main'>
             <ToastContainer />
@@ -237,10 +250,10 @@ function Oder(props) {
                             </tr>
                         </thead>
                         {
-                            bill !== undefined && bill.length !== 0 ?
+                            dataPage !== undefined && dataPage.length !== 0 ?
                                 <tbody>
                                     {
-                                        bill.reverse().map((value, idx) => {
+                                        dataPage.map((value, idx) => {
                                             return [
                                                 value.products.map((item, i) => {
                                                     return (
@@ -288,6 +301,28 @@ function Oder(props) {
                                 </tbody>
                         }
                     </table>
+                    <ReactPaginate
+                        previousLabel="Trang trước"
+                        nextLabel="Trang sau"
+                        breakLabel="..."
+                        breakClassName="page-item"
+                        breakLinkClassName="page-link"
+                        pageCount={pageCount}
+                        pageRangeDisplayed={4}
+                        marginPagesDisplayed={2}
+                        onPageChange={handlePageClick}
+                        containerClassName="pagination justify-content-center mt-5"
+                        pageClassName="page-item"
+                        pageLinkClassName="page-link"
+                        previousClassName="page-item"
+                        previousLinkClassName="page-link"
+                        nextClassName="page-item"
+                        nextLinkClassName="page-link"
+                        activeClassName="active"
+                        hrefAllControls
+                    // forcePage={currentPage}
+
+                    />
                 </div>
             </div>
             <Modal show={showListAccount !== false} onHide={() => setShowListAccount(false)}>

@@ -6,6 +6,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown, faCommentDots, faCommentSms } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import ThreeSixty from 'react-360-view'
+
 function Details(props) {
     var { id } = useParams()
     var [Product, setProduct] = useState({})
@@ -178,7 +179,7 @@ function Details(props) {
                     </Col>
                     <Col xs={12} sm={5}>
                         <div className='mx-5'>
-                            <h3 className='fw-bolder text-uppercase'>Thông tin sản phẩm</h3>
+                            <h3 className='fw-bolder text-uppercase'>THÔNG SỐ KỸ THUẬT</h3>
                             <Table>
                                 <tbody>
                                     <tr>
@@ -235,7 +236,7 @@ function Details(props) {
             }
             <Container className='mt-2'>
                 <Row >
-                    <h4 className='text-start text-uppercase text-danger'> Sản phẩm cùng thương hiệu</h4>
+                    <h4 className='text-start text-uppercase text-danger'> CÁC XE TƯƠNG TỰ</h4>
                     {
                         Products.map((item, idx) => {
                             return idx < 4 && (

@@ -1,0 +1,25 @@
+------------------------Hướng dẫn chạy chương trình-------------------
+- Download CSDL MongoDB tại https://www.mongodb.com/try/download/shell
+- Mở CSDL MongoDB và tạo Database với tên cars
+- Sau đó import tất cả các file ở thư mục MongoDB vào database cars
+- Mở terminal chọn đường dẫn tới các thư mục:
+	* backend sau đó gõ các lệnh: 
+		+ npm i 
+		+ npm start
+	* frontend và thực thi các lệnh:
+		+ npm i 
+		+ npm start
+- Để vào phía quản trị viên thực hiện như sau:
+	- Gõ đường dẫn: https://localhost:3000/admin để vào admin.  
+	- Tài khoản đăng nhập phía admin là 
+		+ TK: admin@gmail.com
+		+ MK: 123456 
+	- Gõ đường dẫn: https://localhost:3000/shipper để vào nhân viên.
+	- Tài khoản đăng nhập phía nhân viên là
+		+ TK: nhanvien1@gmail.com
+		+ MK: 123456
+- Chúc các bạn thành công.
+- Mọi thắc mắc liên hệ :
+	+ SĐT: 0786877893
+	+email: thuannguyennguyen2006@gmail.com
+- Xin cảm ơn các bạn đã đọc.

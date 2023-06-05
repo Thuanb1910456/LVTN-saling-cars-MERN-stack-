@@ -25,6 +25,7 @@ function ProfitByProduct(props) {
     }, [])
 
     useEffect(() => {
+        console.log(1111);
         Products.forEach(product => {
             var count = 0;
             var profit = 0;
@@ -39,7 +40,7 @@ function ProfitByProduct(props) {
             TotalProfit += profit
         })
         // eslint-disable-next-line
-    }, [Bill])
+    }, [Products,Bill])
 
     const productsfind = (e) => {
         const temp = ProductFind.filter(element => element.name.toLowerCase().includes(e.target.value.toLowerCase()))

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useLayoutEffect, useState } from 'react';
+import React, {  useLayoutEffect, useState } from 'react';
 import { Link, useNavigate, } from 'react-router-dom';
 import { Bar } from "react-chartjs-2"
 // eslint-disable-next-line
@@ -109,8 +109,8 @@ function Dahroash(props) {
                             <div className="card-body d-flex align-items-center bg-warning p-2">
                                 <div>
                                     <div className='d-flex'>
-                                        <p className="card-text mb-0">Tất cả đơn hàng 
-                                        <Badge bg='info' className='ms-1 h4 mb-0' text='white'>{newoder}</Badge>
+                                        <p className="card-text mb-0">Tất cả đơn hàng
+                                            <Badge bg='info' className='ms-1 h4 mb-0' text='white'>{newoder}</Badge>
                                         </p>
                                     </div>
                                     <h2 className="card-title">{oder?.length}</h2>
@@ -132,7 +132,7 @@ function Dahroash(props) {
                                     <p className="card-text mb-0">Tổng doanh thu</p>
                                     <h2 className="card-title">
                                         {
-                                            totalValue ?  new Intl.NumberFormat('vi').format(totalValue)  : 0 
+                                            totalValue ? new Intl.NumberFormat('vi').format(totalValue) : 0
                                         }
                                     </h2>
                                 </div>

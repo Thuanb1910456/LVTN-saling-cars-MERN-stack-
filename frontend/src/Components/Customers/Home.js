@@ -3,6 +3,7 @@ import { Card, Carousel, Container, Row, Col } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 function Home(props) {
+
     const [Products, setProducts] = useState([])
     const [ProductFind, setProductFind] = useState([])
     useEffect(() => {
@@ -43,7 +44,7 @@ function Home(props) {
         else {
             return (
                 <Col xs={12} md={4} sm={6} key={idx} className='g-3'>
-                    <Card className='card border-light border border-5' >
+                    <Card className='card border-success border border-2' >
                         <Card.Img variant="top" src={`/image/SanPham/${item.image}`} style={{ width: "auto", height: "400px", maxHeight: "300px" }} />
                         <Card.Body className='bg-light'>
                             <Card.Title>{item.name}</Card.Title>
@@ -123,7 +124,7 @@ function Home(props) {
                     })}
                 </Row>
                 <Row className='mt-3 mb-2 g-3'>
-                    <h1 style={{ textTransform: "uppercase", color: "rgb(200,16,46)" }}>thương hiệu bán chạy nhất trong năm</h1>
+                    <h1 style={{ textTransform: "uppercase", color: "rgb(200,16,46)" }}>thương hiệu của năm</h1>
                     {Products.map((item, idx) => {
                         return idx >= 6 && idx < 12 && (
                             renderProducts(item, idx)

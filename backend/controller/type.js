@@ -70,7 +70,7 @@ exports.updateStatus = async (req, res, next) => {
 exports.delete = async (req, res, next) => {
     try {
         const admin = await Types.findByIdAndUpdate(req.params.id, {
-            deleted: false
+            deleted: true
         });
         res.status(200).json({
             status: "deleted",
@@ -84,7 +84,7 @@ exports.getAll = async (req, res, next) => {
     try {
         var cars = []
         const temp = await Types.find({})
-        cars = temp.filter((e) =>  e.deleted != false)
+        cars = temp.filter((e) =>  e.deleted == false)
         res.status(200).json({
             status: "success",
             results: cars.length,

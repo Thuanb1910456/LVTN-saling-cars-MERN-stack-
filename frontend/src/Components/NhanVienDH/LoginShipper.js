@@ -70,7 +70,7 @@ function LoginShipper(props) {
                                     >
                                         <div className="card-body p-5 text-center">
                                             <div className="mb-md-5 mt-md-4 pb-5">
-                                                <h2 className="fw-bold mb-2 text-uppercase"> Đăng nhập tài khoản Shipper</h2>
+                                                <h2 className="fw-bold mb-2 text-uppercase"> Đăng nhập tài khoản nhân viên</h2>
                                                 <p className="text-dark-50 mb-5">
                                                     Please enter your login and password!
                                                 </p>
